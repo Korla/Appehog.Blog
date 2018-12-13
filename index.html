@@ -9,23 +9,22 @@ layout: default
   <!-- This loops through the paginated posts -->
   {% for post in paginator.posts %}
   <div class="list-post">
-    {% if post.link %}
-    <a href="{{ post.link }}">
-      {% else %}
-      <a href="{{ post.url }}">
-        {% endif %}
-        <div class="list-post-date">
-          <time>{{ post.date | date_to_string }}</time>
-        </div>
-        <div class="list-post-title">
-          {{ post.title }}
-        </div>
+
+    <a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}">
+      <div class="list-post-date">
+        <time>{{ post.date | date_to_string }}</time>
+      </div>
+      <div class="list-post-title">
+        {{ post.title }}
+      </div>
+      <div class="list-post-desc">
         {% if post.description %}
-        <div class="list-post-desc">
-          {{ post.description }}
-        </div>
+        {{ post.description }}
+        {% else %}
+        {{ post.excerpt }}
         {% endif %}
-      </a>
+      </div>
+    </a>
 
 
   </div>
