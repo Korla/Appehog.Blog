@@ -10,7 +10,12 @@ Why should I care about generators?
 ---
 Generators can be used to model asynchronous push-pull processes. They can also model infinite sequences, which I did when [I solved Advent of Code #1](/2018-12-13/stumbling-through-aoc-1/). In such cases they are useful since it's a very concise way of writing code which only needs to process however many elements in the infinite sequence that it needs to fulfil its conditions.
 
-What do they do?
+This all sounds a little scary, but it isn't really. I hope that this simple post gives you a short overview what they can do. And that my post on a case where I ended up using them shows you how they can actually be useful in cleaning up your code, and making its intent much clearer.
+
+![Image of a workbench](/assets/images/generator.jpg "Image of a workbench")
+> This isn't actually a generator, but it's the closest that the headquarters can supply at the moment
+
+How do they work?
 ---
 In short, generators are functions which can be asked to yield their next value. This means that they have an internal state, and when asked for their next value, continue from their current state, and yield the next value. Here's an example:
 
@@ -26,7 +31,7 @@ for(let value of createGenerator()) {
 }
 ```
 
-Under the hood, they implement `Iterable`, and `Iterator`. This means that the return value of a Generator is an object which has a next-function which is parameterless. Whenever the next-function is called, it returns an object which has a value (the yielded value), and a boolean, done, which is false until the last value is yielded.
+Under the hood, they implement `Iterable`, and `Iterator`. What this means is that the return value of a Generator is an object which has a next-function. Whenever the next-function is called, it returns an object which has a value (the yielded value), and a boolean, done, which is false until the last value is yielded.
 
 ```js
 const generator = createGenerator();
