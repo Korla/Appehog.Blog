@@ -103,4 +103,4 @@ Where can I read more?
 ---
 There is a lot of great material on Generators out there. The [exploringjs article on generators](http://exploringjs.com/es6/ch_generators.html#sec_overview-generators), goes into great detail to explain what generators do. The mdn articles on [Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator), and [function\*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) are also useful for quick information on syntax and behaviour. 
 
-Implementation wise there are  a host of articles on how async/await can be implemented using generators. I find that [Eric Elliott's take](https://medium.com/javascript-scene/the-hidden-power-of-es6-generators-observable-async-flow-control-cfa4c7f31435) makes for good reading.
+Implementation-wise there are a host of articles on how async/await can be implemented using generators. I find that [Eric Elliott's take](https://medium.com/javascript-scene/the-hidden-power-of-es6-generators-observable-async-flow-control-cfa4c7f31435) makes for good reading.
