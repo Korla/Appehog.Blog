@@ -1,3 +1,5 @@
+$headerHeight: 6vh;
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -32,14 +34,14 @@ body {
   Header
   -------------- */
 .header {
-  margin-bottom: 1.5em;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 75px;
+  height: $headerHeight;
   background-image: url(/assets/images/header.png);
   background-position-y: 55%;
+  background-position-x: 50%;
   background-size: cover;
 
   .content-container {
@@ -48,6 +50,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
   }
 
   a {
@@ -86,7 +89,7 @@ body {
   -------------- */
 
 .page {
-  margin-top: 75px;
+  margin-top: $headerHeight;
   padding: 0 2%;
 
   &-title {
@@ -102,7 +105,7 @@ body {
   Post
   -------------- */
 .post {
-  margin-top: 75px;
+  margin-top: $headerHeight;
 
   &-title {
     margin-top: 0rem;
@@ -172,7 +175,7 @@ body {
   -------------- */
 
 .list {
-  margin-top: 75px;
+  margin-top: $headerHeight;
 
   &-post {
     padding: 2%;
