@@ -10,7 +10,7 @@ Why should I care about generators?
 ---
 Generators can be used to model asynchronous push-pull processes. They can also model infinite sequences, which I did when [I solved Advent of Code #1](/2018-12-13/stumbling-through-aoc-1/). In such cases they are useful since it's a very concise way of writing code which only needs to process however many elements in the infinite sequence that it needs to fulfil its conditions.
 
-Generators in short
+What do they do?
 ---
 In short, generators are functions which can be asked to yield their next value. This means that they have an internal state, and when asked for their next value, continue from their current state, and yield the next value. Here's an example:
 
@@ -26,7 +26,7 @@ for(let value of createGenerator()) {
 }
 ```
 
-Under the hood, they implement `Iterable`, and `Iterator`. The short of what this means is that the return value of a Generator is an object which has a next-function which is parameterless. Whenever the next-function is called, it returns an object which has a value (the yielded value), and a boolean, done, which is false until the last value is yielded.
+Under the hood, they implement `Iterable`, and `Iterator`. This means that the return value of a Generator is an object which has a next-function which is parameterless. Whenever the next-function is called, it returns an object which has a value (the yielded value), and a boolean, done, which is false until the last value is yielded.
 
 ```js
 const generator = createGenerator();
@@ -94,9 +94,7 @@ console.log(iterable.next(() => { throw 'This is ignored' })); // Does not throw
 console.log(iterable.next(() => { throw 'This is called' })); // Throws
 ```
 
-
-
-More reading
+Where can I read more?
 ---
 There is a lot of great material on Generators out there. The [exploringjs article on generators](http://exploringjs.com/es6/ch_generators.html#sec_overview-generators), goes into great detail to explain what generators do. The mdn articles on [Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator), and [function\*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) are also useful for quick information on syntax and behaviour. 
 
