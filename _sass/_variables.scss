@@ -1,5 +1,9 @@
 /* SCSS Variables */
 
+$app-green: #576530;
+$app-green-light: #92ad5f;
+
+
 /*--------------
   Font
   -------------- */
@@ -23,8 +27,8 @@ $background-color: $oc-white;
 $background-over-color: $oc-gray-1;
 
 $text-color: $oc-gray-8;
-$link-color: $oc-blue-8;
-$code-color: $oc-indigo-9;
+$link-color: $app-green-light;
+$code-color: $app-green;
 $code-background-color: $oc-gray-1;
 $table-border-color: $oc-gray-2;
 $table-background-color: $oc-gray-1;

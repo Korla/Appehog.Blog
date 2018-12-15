@@ -1,5 +1,4 @@
 $headerHeight: 10vh;
-$app-green-light: #92ad5f;
 
 * {
   -webkit-box-sizing: border-box;
@@ -44,6 +43,7 @@ body {
   background-position-y: 55%;
   background-position-x: 50%;
   background-size: cover;
+  border-bottom: 2px solid white;
 
   .content-container {
     font-weight: 600;
@@ -54,11 +54,17 @@ body {
     height: 100%;
   }
 
+
   a {
     color: white;
-    &:hover,
+    margin-right: .3rem;
+
     &:focus {
       text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -66,22 +72,12 @@ body {
     color: $oc-gray-5;
   }
 
-  &-link {
-    font-size: 1.25em;
+  &-nav {
+    text-transform: lowercase;
   }
 
-  &-nav {
-    a {
-      color: white;
-      text-transform: lowercase;
-      margin-right: .3rem;
-
-      &:hover,
-      &:focus {
-        color: white;
-        text-decoration: none;
-      }
-    }
+  &-link {
+    font-size: 1.5em;
   }
 }
 
@@ -174,20 +170,16 @@ body {
 
   &-post {
     padding: 2%;
-    
+    color: $base-color;
+    display: block;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
     &:hover {
       background-color: $background-over-color;
       border-color: transparent;
-      border-radius: 10px;
-    }
-
-    a {
-      color: $base-color;
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-      }
     }
 
     &-title {
@@ -362,7 +354,7 @@ body {
     margin: .2rem;
 
     a {
-      color: $base-color;
+      color: $app-green;
       margin: 4px;
     }
   }
