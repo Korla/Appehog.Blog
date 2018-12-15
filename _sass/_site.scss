@@ -1,4 +1,5 @@
-$headerHeight: 6vh;
+$headerHeight: 10vh;
+$app-green-light: #92ad5f;
 
 * {
   -webkit-box-sizing: border-box;
@@ -143,7 +144,6 @@ body {
           margin: 4px;
           margin-left: 0px;
           color: $oc-white;
-          background-color: $oc-gray-6;
           text-decoration: none;
           border-radius: 3px;
 
@@ -153,16 +153,11 @@ body {
           }
         }
 
-        a:hover {
-          background-color: $oc-gray-7;
-        }
-
-        a:visited {
-          background-color: $oc-gray-5;
-        }
-
+        a,
+        a:visited,
+        a:hover,
         a:visited:hover {
-          background-color: $oc-gray-7;
+          background-color: $app-green-light;
         }
       }
     }

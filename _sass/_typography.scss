@@ -1,3 +1,4 @@
+$app-green: #576530;
 /* Post Typography */
 
 /*--------------
@@ -35,6 +36,8 @@ a {
 /*--------------
   Header
   -------------- */
+$header-bottom: 2px solid $app-green;
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
@@ -44,15 +47,16 @@ h1 {
   padding-bottom: 0.3em;
   font-size: 2.25em;
   line-height: 1.2em;
-  border-bottom: 1px solid #eee;
+  border-bottom: $header-bottom;
 }
 
 h2 {
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
+  margin: 0;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
   font-size: 1.75em;
   line-height: 1.225em;
-  border-bottom: 1px solid #eee;
+  border-bottom: $header-bottom;
 }
 
 h3 { 
@@ -216,7 +220,7 @@ blockquote {
   padding: 0 0 0 1.4rem;
   margin: 0 2rem 1rem 0;
   color: $oc-gray-6;
-  border-left: .3rem solid $oc-gray-3;
+  border-left: .3rem solid $app-green;
 
   p:last-child {
     margin-bottom: 0;
@@ -336,6 +340,14 @@ img {
   max-width: 100%;
   margin: 0 0 1rem;
   border-radius: 5px;
+}
+
+img + em {
+  font-size: 14px;
+  border-left: 2px solid #576530;
+  display: block;
+  padding: 0.2rem 1rem;
+  line-height: 1.4;
 }
 
 /*--------------

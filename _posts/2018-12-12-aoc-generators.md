@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Generators in short"
+title: "Generators overview"
 date: 2018-12-13
 tags: javascript generators
 description: "This is a short explanation of key concepts to explain my solution to Advent of Code #1."
@@ -13,11 +13,11 @@ Generators can be used to model asynchronous push-pull processes. They can also 
 This all sounds a little scary, but it isn't really. I hope that this simple post gives you a short overview what they can do. And that my post on a case where I ended up using them shows you how they can actually be useful in cleaning up your code, and making its intent much clearer.
 
 ![Image of a workbench](/assets/images/generator.jpg "Image of a workbench")
-> This isn't actually a generator, but it's the closest that the headquarters can supply at the moment
+*This isn't actually a generator, but it's the closest that the headquarters can supply at the moment, some value was generated when the lumber was stored*
 
 How do they work?
 ---
-In short, generators are functions which can be asked to yield their next value. This means that they have an internal state, and when asked for their next value, continue from their current state, and yield the next value. Here's an example:
+In short, generators are objects which can be asked to yield their next value. This means that they have an internal state, and when asked for their next value, continue from their current state, and yield the next value. There's a `function*`-declaration which can be used to create them. Here's an example:
 
 ```js
 function* createGenerator() {
@@ -31,7 +31,12 @@ for(let value of createGenerator()) {
 }
 ```
 
-Under the hood, they implement `Iterable`, and `Iterator`. What this means is that the return value of a Generator is an object which has a next-function. Whenever the next-function is called, it returns an object which has a value (the yielded value), and a boolean, done, which is false until the last value is yielded.
+When called, the code inside the generator function is not run immediately. Instead it waits for someone else to ask it for its first value. In the example above the `for...of`-loop does this. Whenever it is asked for a value, the generator executes code until it reaches a `yield`-statement, or the end of the generator is reached.
+
+![Image of some chickens](/assets/images/generator2.jpg "Image of some chickens")
+*There are no predators at the headquarters, just imagine that the neighbor's hens and rooster are lying in wait for prey, just like the generator is waiting for someone to call next*
+
+Under the hood, generators implement `Iterable`, and `Iterator`. What this means is that the return value of a Generator is an object which has a next-function. Whenever the next-function is called, it returns an object which has a value (the yielded value), and a boolean, done, which is false until the last value is yielded.
 
 ```js
 const generator = createGenerator();
