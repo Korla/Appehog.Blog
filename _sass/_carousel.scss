@@ -21,7 +21,6 @@
       background: url("http://haloxp.com/codepen/carousel-arrow-dark.png") 50%
         50% / 20px no-repeat;
       background-color: rgba(256,256,256,0.3);
-      visibility: hidden;
 
       @media (max-width: 480px) {
         & {
@@ -36,9 +35,6 @@
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
       }
-    }
-    &:hover .arrow {
-      visibility: visible;
     }
     @media (max-width: 480px) {
       .arrow,
