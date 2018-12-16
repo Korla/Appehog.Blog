@@ -55,9 +55,22 @@ permalink: /gallery/
   {% assign commentparts = image | split:'*' %}
   <div class="carousel-item item-{{bottomcounter}}">
       <div class="image-wrapper">
-        <image src="/assets/images{{jpgparts[0]}}.jpg"/>
+        <a href="{{post.url}}">
+          <image src="/assets/images{{jpgparts[0]}}.jpg"/>
+        </a>
+        {% if bottomcounter == 1 %}
+        <a class="arrow arrow-prev" href="#target-item-{{topcounter}}"></a>
+        {% else %}
+        <a class="arrow arrow-prev" href="#target-item-{{bottomcounter | minus:1}}"></a>
+        {% endif %}
+        {% if bottomcounter == topcounter %}
+        <a class="arrow arrow-next" href="#target-item-1"></a>
+        {% else %}
+        <a class="arrow arrow-next" href="#target-item-{{bottomcounter | plus:1}}"></a>
+        {% endif %}
       </div>
-      <em>{{commentparts | join: '||||||'}}</em>
+      <em>{{commentparts[1]}}</em>
+      <div>{{bottomcounter}} / {{topcounter}}</div>
   </div>
   {% endif %}
   {% endfor %}

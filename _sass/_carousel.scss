@@ -12,6 +12,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    > * + * {
+      margin-top: 1em;
+    }
     .arrow {
       position: absolute;
       top: 0;
@@ -45,7 +49,6 @@
     }
     .image-wrapper {
       position: relative;
-      margin-bottom: 1rem;
     }
 
     img {
