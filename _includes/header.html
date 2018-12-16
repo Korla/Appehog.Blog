@@ -2,13 +2,10 @@
   <div class="content-container">
     <a href="/" class="header-link">{{ site.name }}</a>
     <nav class="header-nav">
-      {% for nav in site.nav %}
-      {% if nav.url contains 'http://' or nav.url contains 'https://' %}
-      <a href="{{ nav.url }}">{{ nav.name }}</a>
-      {% else %}
-      <a href="{{ nav.url }}">{{ nav.name }}</a>
-      {% endif %}
-      {% endfor %}
+      <a href="/about">about</a>
+      <a href="/Archive">archive</a>
+      <a href="/Tags">tags</a>
+      <a href="/Gallery">gallery</a>
     </nav>
   </div>
 </header>

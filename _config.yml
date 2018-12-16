@@ -24,15 +24,6 @@ markdown:           kramdown
 kramdown:
   input:            GFM
 
-# Navigation
-nav:
-  - name:           "About"
-    url:            "/about"
-  - name:           "Archive"
-    url:            "/archive"
-  - name:           "Tags"
-    url:            "/tags"
-
 # Sass
 sass:
   sass_dir:         _sass

@@ -341,6 +341,7 @@ img {
   border-radius: 5px;
 }
 
+.image-wrapper + em,
 img + em {
   font-size: 14px;
   border-left: 2px solid #576530;
