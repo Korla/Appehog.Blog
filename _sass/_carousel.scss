@@ -68,4 +68,8 @@
   #target-item-1:target ~ .item-1 {
     opacity: 1;
   }
+  #target-item-2:target ~ .item-2, {
+    z-index: 3;
+    opacity: 1;
+  }
 }
