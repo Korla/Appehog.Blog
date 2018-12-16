@@ -55,9 +55,7 @@ permalink: /gallery/
   {% assign commentparts = image | split:'*' %}
   <div class="carousel-item item-{{bottomcounter}}">
       <div class="image-wrapper">
-        <a href="{{post.url}}">
-          <image src="/assets/images{{jpgparts[0]}}.jpg"/>
-        </a>
+        <image src="/assets/images{{jpgparts[0]}}.jpg"/>
         {% if bottomcounter == 1 %}
         <a class="arrow arrow-prev" href="#target-item-{{topcounter}}"></a>
         {% else %}
