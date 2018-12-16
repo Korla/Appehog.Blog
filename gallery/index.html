@@ -43,21 +43,4 @@ permalink: /gallery/
   {% endfor %}
   {% endif %}
   {% endfor %}
-
-  {% assign bottomcounter = 0 %}
-  {% for post in site.posts %}
-  {% if post.content contains '/assets/images' %}
-  {% assign images = post.content | split:'/assets/images' %}
-  {% for image in images %}
-  {% if image contains '.jpg' %}
-  {% assign bottomcounter = bottomcounter | plus:1 %}
-  {% assign jpgparts = image | split:'.jpg' %}
-  {% assign commentparts = image | split:'*' %}
-  <div class="carousel-item item-{{bottomcounter}}">
-      <em>{{commentparts[1]}}</em>
-  </div>
-  {% endif %}
-  {% endfor %}
-  {% endif %}
-  {% endfor %}
 </div>
