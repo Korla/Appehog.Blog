@@ -54,9 +54,6 @@ permalink: /gallery/
   {% assign jpgparts = image | split:'.jpg' %}
   {% assign commentparts = image | split:'*' %}
   <div class="carousel-item item-{{bottomcounter}}">
-      <div class="image-wrapper">
-        <image src="/assets/images{{jpgparts[0]}}.jpg"/>
-      </div>
       <em>{{commentparts[1]}}</em>
   </div>
   {% endif %}
