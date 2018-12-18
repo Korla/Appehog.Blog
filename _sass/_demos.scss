@@ -16,17 +16,17 @@
   }
 }
 
-.demo-list .list-post-title {
+.demo-list-post .list-post-title {
   color: black;
 }
 
-.demo-list .demo-header {
+.demo-list-post .demo-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.demo-list {
+.demo-list-post {
   a + a {
     margin-left: 1rem;
   }
