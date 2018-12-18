@@ -5,18 +5,14 @@ permalink: /demos/
 ---
 
 <ul>
+  {% for demo in site.demos %}
   <li>
-    <h3>Raycing</h3>
-    <a href="https://korla.github.io/raycing/cordova/www/">Full screen</a>
-    <a href="https://github.com/oskar/raycing">Source</a>
-    <a href="/demos/raycing/">Demo</a>
+    <h3>{{demo.name}}</h3>
+    <a href="{{demo.link}}">Full screen</a>
+    <a href="{{demo.source}}">Source</a>
+    <a href="{{demo.url}}">Demo</a>
   </li>
-  <li>
-    <h3>Hexgame Boardgame.io</h3>
-    <a href="https://korla.github.io/hexgame/build/">Full screen</a>
-    <a href="https://github.com/Korla/hexgame">Source</a>
-    <a href="/demos/hexgame/">Demo</a>
-  </li>
+  {% endfor %}
 </ul>
 
 {{content}}

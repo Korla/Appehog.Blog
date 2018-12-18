@@ -10,6 +10,19 @@ copyright:
   year:             2018
   name:             "Johannes Bengtsson"
 
+# Data
+demos:
+  -
+    name: HexGame
+    link: https://korla.github.io/hexgame/build/
+    source: https://github.com/Korla/hexgame/
+    url: /demos/hexgame/
+  -
+    name: Raycing
+    link: https://korla.github.io/raycing/cordova/www/
+    source: https://github.com/oskar/raycing/
+    url: /demos/raycing/
+
 # URL
 url:                "https://appehog.se"
 
