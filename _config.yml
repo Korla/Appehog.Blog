@@ -17,11 +17,13 @@ demos:
     link: https://korla.github.io/hexgame/build/
     source: https://github.com/Korla/hexgame/
     url: /demos/hexgame/
+    description: I helped out a little with an open source redux-based game engine called boardgame.io. This is my version of a game called The Hive implemented using that framework.
   -
     name: Raycing
     link: https://korla.github.io/raycing/cordova/www/
     source: https://github.com/oskar/raycing/
     url: /demos/raycing/
+    description: A turn-based racing game. Implemented in Three.js, and Vue.js. Builds into an iOS app using Cordova.
 
 # URL
 url:                "https://appehog.se"

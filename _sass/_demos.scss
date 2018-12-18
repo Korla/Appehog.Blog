@@ -15,3 +15,19 @@
     height: 75%;
   }
 }
+
+.demo-list .list-post-title {
+  color: black;
+}
+
+.demo-list .demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.demo-list {
+  a + a {
+    margin-left: 1rem;
+  }
+}

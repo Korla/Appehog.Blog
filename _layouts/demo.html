@@ -4,15 +4,22 @@ title: Demos
 permalink: /demos/
 ---
 
-<ul>
-  {% for demo in site.demos %}
-  <li>
-    <h3>{{demo.name}}</h3>
-    <a href="{{demo.link}}">Full screen</a>
-    <a href="{{demo.source}}">Source</a>
-    <a href="{{demo.url}}">Demo</a>
-  </li>
-  {% endfor %}
-</ul>
+{% for demo in site.demos %}
+<div class="list-post demo-list">
+  <div class="list-post-date">
+    <time>{{ demo.date }}</time>
+  </div>
+  <div class="demo-header">
+    <a href="{{ demo.url }}" class="list-post-title">{{ demo.name }}</a>
+    <span>
+      <a href="{{ demo.source }}"><i class="fa fa-github"></i></a>
+      <a href="{{ demo.link }}"><i class="fa fa-link"></i></a>
+    </span>
+  </div>
+  <div class="list-post-desc">
+    {{ demo.description }}
+  </div>
+</div>
+{% endfor %}
 
 {{content}}
