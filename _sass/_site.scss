@@ -1,4 +1,5 @@
 $headerHeight: 10vh;
+$elementPadding: 0.8rem;
 
 * {
   -webkit-box-sizing: border-box;
@@ -57,7 +58,6 @@ body {
 
   a {
     color: white;
-    margin-right: .3rem;
 
     &:focus {
       text-decoration: none;
@@ -74,6 +74,13 @@ body {
 
   &-nav {
     text-transform: lowercase;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    > * {
+      margin-left: 0.5rem;
+    }
   }
 }
 
@@ -83,7 +90,6 @@ body {
 
 .page {
   margin-top: $headerHeight;
-  padding: 0 2%;
 
   &-title {
     margin-bottom: 1rem;
@@ -165,7 +171,7 @@ body {
   margin-top: $headerHeight;
 
   &-post {
-    padding: 2%;
+    padding: $elementPadding;
     color: $base-color;
     display: block;
 
@@ -205,7 +211,7 @@ body {
 
     &-previous {
       float: left;
-      padding-left: 2%;
+      padding-left: $elementPadding;
       a {
         color: $oc-gray-6;
 
@@ -219,7 +225,7 @@ body {
 
     &-next {
       float: right;
-      padding-right: 2%;
+      padding-right: $elementPadding;
       a {
         color: $oc-gray-6;
 
