@@ -342,7 +342,8 @@ img {
 }
 
 .image-wrapper + em,
-img + em {
+img + em,
+.highlighter-rouge + p em {
   font-size: 14px;
   border-left: 2px solid #576530;
   display: block;
