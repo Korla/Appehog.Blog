@@ -89,6 +89,9 @@ It would also be nice if we could write the code so that if we needed another du
 
 All these requirements can be satisfied if we implement the solution using generators instead.
 
+![Image of a birch tree taken form the kitchen](/assets/images/aoc.jpg "Lazy birch")
+*So, how lazy was I? I took this photo from the warmth of the kitchen*
+
 Mutationless (almost) solution
 ---
 The first part is again to create an infinite loop of the frequency changes. This can be done by yielding the elements of the sequence, and then recursively yielding the elements of the sequence:
