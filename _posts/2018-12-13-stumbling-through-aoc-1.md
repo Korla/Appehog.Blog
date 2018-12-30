@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solving AoC #1"
+title: "Lazy iteration in Javascript"
 date: 2018-12-29
 tags: javascript generators adventofcode
 description: "Follow along as I stumble my way through the first task in Advent of Code, landing in generator heaven."
@@ -199,4 +199,4 @@ const duplicates = new Lazy(frequencyChanges) // Create a generator which can yi
 ```
 *Unfortunately, the reduce mutates the previous state, which is a concession to performance. A performant solution would implement history using an immutable data structure, perhaps using a proxy (a topic for a future blog post perhaps?)*
 
-The full `Lazy` implementation can be seen in this [gist](https://gist.github.com/Korla/ec117e0d41b7d383c78173afb5ceab8c). TO run it against your data, I suggest copying the gist to a anippet and running it directly on the input page for AoC #1.
+The full `Lazy` implementation can be seen in this [gist](https://gist.github.com/Korla/ec117e0d41b7d383c78173afb5ceab8c). To run it against your data, I suggest copying the gist to a snippet and running it directly on the input page for AoC #1.
