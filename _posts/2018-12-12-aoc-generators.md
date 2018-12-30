@@ -3,7 +3,7 @@ layout: post
 title: "Generators overview"
 date: 2018-12-13
 tags: javascript generators
-description: "This is a short explanation of key concepts to explain my solution to Advent of Code #1."
+description: "A short explanation of key concepts of generators in javascript"
 ---
 
 Why should I care about generators?
