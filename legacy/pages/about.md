@@ -12,7 +12,7 @@ I am a web developer consultant. My focus areas these years have been to build w
 
 I am sure you're wondering why the company is named Appehög. It is of course due to my great-grandparents Marta and Ivar Jeppsson. They built a home for themselves and their six children in Östra Vemmerlöv, Skåne. And it is now the unofficial headquarters of *Appehög AB*.
 
-![The headquarters of Appehög AB](/legacy/assets/images/about2.jpg "The headquarters of Appehög AB")
+![The headquarters of Appehög AB](/images/about2.jpg "The headquarters of Appehög AB")
 *Late summer 2018. From left to right, garage, "hönsahuset" and "fårahuset", greenhouse, "rökeriet", main building*
 
 For the past 25 years or so, it's been the place where our family gathers in the summer and during the holidays. The house was built next to a hill, *hög*, and was rumoured to have once been the home of a giant called *Appe*.

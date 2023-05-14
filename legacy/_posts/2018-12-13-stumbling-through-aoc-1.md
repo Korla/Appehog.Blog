@@ -89,7 +89,7 @@ It would also be nice if we could write the code so that if we needed another du
 
 All these requirements can be satisfied if we implement the solution using generators instead.
 
-![Image of a birch tree taken form the kitchen](/legacy/assets/images/aoc.jpg "Lazy birch")
+![Image of a birch tree taken form the kitchen](/images/aoc.jpg "Lazy birch")
 *So, how lazy was I? I took this photo from the warmth of the kitchen*
 
 Mutationless (almost) solution
