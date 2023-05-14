@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: ../../layouts/BlogLayout.astro
 title: "Generators overview"
 date: 2018-12-13
 tags: javascript generators
+slug: "2018-12-12-aoc-generators"
 description: "A short explanation of key concepts of generators in javascript"
 ---
 

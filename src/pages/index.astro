@@ -1,0 +1,16 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro'
+import { readdirSync } from 'fs'
+import { join } from 'path'
+const posts = await Astro.glob("../pages/posts/*.md");
+---
+
+<BlogLayout>
+  <ul>
+    {posts.map((post) => (
+      <li key={post.slug}>
+        <a href={`/posts/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
+      </li>
+    ))}
+  </ul>
+</BlogLayout>

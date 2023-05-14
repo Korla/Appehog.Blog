@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: ../../layouts/BlogLayout.astro
 title: "Lazy iteration in Javascript"
 date: 2018-12-29
 tags: javascript generators adventofcode
+slug: "2018-12-13-stumbling-through-aoc-1"
 description: "Follow along as I stumble my way through the first task in Advent of Code, landing in generator heaven."
 ---
 
