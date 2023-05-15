@@ -2,12 +2,15 @@
 export interface Props {
 	title: string;
 }
-
-const { title } = Astro.props;
+const regex = /\/([^/]+)\.astro$/;
+const links = (await Astro.glob('../pages/*.astro'))
+  .map(({file, url}) => ({url, name: file.match(regex)[1]}));
 ---
 
 <div class="container">
-  <h1>{title}</h1>
+  <h1>Appehög AB</h1>
+  {links.map(({url, name}) => (<a href={url}>{name}</a>))}
+  </nav>
   <div class="content">
 		<slot />
   </div>

@@ -1,4 +1,5 @@
 ---
+import BlogLayout from '../layouts/BlogLayout.astro'
 const demos = [
   {
       name: 'HexGame',
@@ -23,11 +24,12 @@ const demos = [
   }
 ];
 ---
-
-<ul>
-  {demos.map((demo) => (
-    <li key={demo.name}>
-      <a href={`${demo.link}`}>{demo.name}</a>
-    </li>
-  ))}
-</ul>
+<BlogLayout>
+  <ul>
+    {demos.map((demo) => (
+      <li key={demo.name}>
+        <a href={`${demo.link}`}>{demo.name}</a>
+      </li>
+    ))}
+  </ul>
+</BlogLayout>
