@@ -1,0 +1,37 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { demos } from '../demos';
+const images = [
+  {
+    name: 'generator',
+    description: 'This isn\'t actually a generator, but it\'s the closest that the headquarters can supply at the moment, some value was generated when the lumber was stored',
+    link: '/posts/2018-12-13-aoc-generators/'
+  },
+  {
+    name: 'generator2',
+    description: 'There are no predators at the headquarters, just imagine that the neighbor\'s hens and rooster are lying in wait for prey, just like the generator is waiting for someone to call next',
+    link: '/posts/2018-12-13-aoc-generators/'
+  },
+  {
+    name: 'about2',
+    description: 'Late summer 2018. From left to right, garage, "hönsahuset" and "fårahuset", greenhouse, "rökeriet", main building',
+    link: '/about'
+  },
+  {
+    name: 'aoc',
+    description: 'So, how lazy was I? I took this photo from the warmth of the kitchen',
+    link: '/posts/2018-12-29-stumbling-through-aoc-1'
+  },
+]
+
+---
+<BlogLayout>
+  <ul>
+    {images.map((image) => (
+      <li key={image.name}>
+        <image src=`/images/${image.name}.jpg` alt={image.name} />
+        <em>{image.description}</em>
+      </li>
+    ))}
+  </ul>
+</BlogLayout>
