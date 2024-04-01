@@ -1,12 +1,12 @@
 ---
-import BlogLayout from '../../layouts/BlogLayout.astro';
-import { demos } from '../../demos';
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { demos } from "../../demos";
 
 export const getStaticPaths = () =>
-  demos.map(({name}) => ({params: {demo: name.toLowerCase()}}));
+  demos.map(({ name }) => ({ params: { demo: name.toLowerCase() } }));
 
 const { demo } = Astro.params;
-const currentDemo = demos.find(({name}) => name.toLowerCase() == demo);
+const currentDemo = demos.find(({ name }) => name.toLowerCase() == demo);
 ---
 
 <BlogLayout>

@@ -1,14 +1,16 @@
 ---
-import BlogLayout from '../layouts/BlogLayout.astro';
-import { demos } from '../demos';
-
+import BlogLayout from "../layouts/BlogLayout.astro";
+import { demos } from "../demos";
 ---
+
 <BlogLayout>
   <ul>
-    {demos.map((demo) => (
-      <li key={demo.name}>
-        <a href={`${demo.url}`}>{demo.name}</a>
-      </li>
-    ))}
+    {
+      demos.map((demo) => (
+        <li key={demo.name}>
+          <a href={`${demo.url}`}>{demo.name}</a>
+        </li>
+      ))
+    }
   </ul>
 </BlogLayout>

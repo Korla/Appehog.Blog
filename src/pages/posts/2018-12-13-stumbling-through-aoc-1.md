@@ -32,12 +32,12 @@ No duplicate frequencies were found in this case, so then the sequence of change
 
 In this case we had to loop the numbers once to find a duplicate frequency, but we do not know how many times we need to loop the numbers to reach the total. In the actual data we use in AoC, the number of times we need to loop the frequency changes is hundreds of times.
 
-Procedural solution
----
+## Procedural solution
+
 The first piece to solve this with code is to have some way to give us the next frequency change. This can be solved using a modulo operation, given the complete array of frequency changes, `frequencyChanges`:
 
 ```js
-const nextFrequencyChange = frequencyChanges[i % frequencyChanges.length]
+const nextFrequencyChange = frequencyChanges[i % frequencyChanges.length];
 ```
 
 If we put this in an infinite loop, we can calculate the running total, `frequency`:
@@ -45,7 +45,8 @@ If we put this in an infinite loop, we can calculate the running total, `frequen
 ```js
 let frequency = 0; // The current frequency
 let i = 0; // A counter used to get the next frequency change
-while(true) { // An infinite loop
+while (true) {
+  // An infinite loop
   frequency += frequencyChanges[i % frequencyChanges.length]; // Calculate the next frequency
   i++; // Tick up the counter
 }
@@ -57,7 +58,7 @@ The next part is finding if the current frequency has already been visited. This
 const history = {}; // The visited frequencies
 let frequency = 0;
 let i = 0;
-while(true) {
+while (true) {
   history[frequency] = (history[frequency] || 0) + 1; // Append the last frquency to the history
   frequency += frequencyChanges[i % frequencyChanges.length];
   i++;
@@ -72,16 +73,18 @@ const findDuplicates = (frequencyChanges, numberOfDuplicates) => {
   const history = {};
   let frequency = 0;
   let i = 0;
-  while(duplicates.length !== numberOfDuplicates) { // Loop until we find the desired number of duplicates
+  while (duplicates.length !== numberOfDuplicates) {
+    // Loop until we find the desired number of duplicates
     history[frequency] = (history[frequency] || 0) + 1;
     frequency += frequencyChanges[i % frequencyChanges.length];
-    if(history[frequency] === 1) { // Check if the current frequency has been visited once previously
+    if (history[frequency] === 1) {
+      // Check if the current frequency has been visited once previously
       duplicates.push(frequency); // Add it to duplicates if it has been visited
     }
     i++;
   }
   return duplicates;
-}
+};
 ```
 
 This looks quite neat, and we have a decently portable solution, but I dislike the outer state, and the amount of mutability it leads to. The code feels a little brittle when it comes to changing requirements in a real-world scenario.
@@ -91,10 +94,10 @@ It would also be nice if we could write the code so that if we needed another du
 All these requirements can be satisfied if we implement the solution using generators instead.
 
 ![Image of a birch tree taken form the kitchen](/images/aoc.jpg "Lazy birch")
-*So, how lazy was I? I took this photo from the warmth of the kitchen*
+_So, how lazy was I? I took this photo from the warmth of the kitchen_
 
-Mutationless (almost) solution
----
+## Mutationless (almost) solution
+
 The first part is again to create an infinite loop of the frequency changes. This can be done by yielding the elements of the sequence, and then recursively yielding the elements of the sequence:
 
 ```js
@@ -107,8 +110,10 @@ function* loop(seq) {
 To calculate the running total, we would like to be able to reduce over the iterable sequence. Something like this:
 
 ```js
-const runningTotal = loop(frequencyChanges)
-  .reduce((runningTotal, delta) => runningTotal + delta, 0);
+const runningTotal = loop(frequencyChanges).reduce(
+  (runningTotal, delta) => runningTotal + delta,
+  0,
+);
 ```
 
 Unfortunately, Array.reduce, or similar, isn't implemented for a Generator object. So instead we can aim for something similar to this API:
@@ -128,8 +133,8 @@ const runningTotal = lazy.chain(
   lazy.loop(),
   lazy.reduce((runningTotal, delta) => runningTotal + delta, 0),
   lazy.take(2),
-  lazy.toArray()
-)
+  lazy.toArray(),
+);
 ```
 
 A simple implementation of the first API could look like this:
@@ -158,7 +163,7 @@ class Lazy {
     return this._toFluent(function* loop(seq) {
       yield* seq;
       yield* loop(seq);
-    })
+    });
   }
   take(number) {
     return this.toFluent(function* take(seq) {
@@ -168,7 +173,7 @@ class Lazy {
           return;
         }
       }
-    })
+    });
   }
   toArray() {
     // If we call toArray on an infinite sequence, the execution will not complete
@@ -186,18 +191,23 @@ The final solution looks quite similar to the procedural solution, but it lacks 
 ```js
 const duplicates = new Lazy(frequencyChanges) // Create a generator which can yield our frequency changes
   .loop() // Loop the frequency changes infinitely
-  .reduce(({ history, frequency }, delta) => { // Append the last frequency to the history, and calculate the next frequency
-    history[frequency] = (history[frequency] || 0) + 1;
-    return {
-      history,
-      frequency: frequency + delta
-    };
-  }, { history: {}, frequency: 0 })
+  .reduce(
+    ({ history, frequency }, delta) => {
+      // Append the last frequency to the history, and calculate the next frequency
+      history[frequency] = (history[frequency] || 0) + 1;
+      return {
+        history,
+        frequency: frequency + delta,
+      };
+    },
+    { history: {}, frequency: 0 },
+  )
   .filter(({ history, frequency }) => history[frequency] === 1) // Check if the current frequency has been visited once previously
   .map(({ frequency }) => frequency) // Select the frequency part of our reduced object
   .take(2) // Pick only the first two results
   .toArray(); // Convert enumerable to array
 ```
-*Unfortunately, the reduce mutates the previous state, which is a concession to performance. A performant solution would implement history using an immutable data structure, perhaps using a proxy (a topic for a future blog post perhaps?)*
+
+_Unfortunately, the reduce mutates the previous state, which is a concession to performance. A performant solution would implement history using an immutable data structure, perhaps using a proxy (a topic for a future blog post perhaps?)_
 
 The full `Lazy` implementation can be seen in this [gist](https://gist.github.com/Korla/ec117e0d41b7d383c78173afb5ceab8c). To run it against your data, I suggest copying the gist to a snippet and running it directly on the input page for AoC #1.
