@@ -1,16 +1,30 @@
 ---
 import BlogLayout from "../layouts/BlogLayout.astro";
+import Card from "../components/card.astro";
 const posts = await Astro.glob("../pages/posts/*.md");
 ---
 
 <BlogLayout>
-  <ul>
+  <ul class="flex my-4">
     {
       posts.map((post) => (
-        <li key={post.slug}>
-          <a href={`/posts/${post.frontmatter.slug}`}>
-            {post.frontmatter.title}
-          </a>
+        <li class="w-1/2 m-4">
+          <Card>
+            <div class="bg-orange-100">
+              <a href={`/posts/${post.frontmatter.slug}`}>
+                <image
+                  class="w-full h-40 border-b-2 border-cyan-950"
+                  style={"object-fit: cover;"}
+                  src={post.frontmatter.image}
+                  alt={post.frontmatter.title}
+                />
+                <div class="p-3">
+                  <h2 class="text-xl mb-1 underline">{post.frontmatter.title}</h2>
+                  <div class="min-h-12">{post.frontmatter.description}</div>
+                </div>
+              </a>
+            </div>
+          </Card>
         </li>
       ))
     }

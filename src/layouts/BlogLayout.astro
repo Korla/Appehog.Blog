@@ -10,15 +10,17 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
 }));
 ---
 
-<html class="bg-orange-100 text-teal-700">
+<html class="bg-orange-100 text-cyan-700">
   <head>
     <meta charset="utf-8" />
   </head>
 
   <body>
     <div>
-      <div class="flex justify-center items-center text-lg px-4 py-2">
-        <h1 class="text-3xl flex-1 font-bold">Appehög AB</h1>
+      <div class="flex justify-center items-center text-lg px-8 py-4">
+        <h1 class="text-3xl flex-1 font-bold">
+          <a href="/">Appehög AB</a>
+        </h1>
         {
           links.map(({ url, name }) => (
             <a class="mx-1" href={url}>

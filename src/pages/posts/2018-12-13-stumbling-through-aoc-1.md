@@ -5,6 +5,7 @@ date: 2018-12-29
 tags: javascript generators adventofcode
 slug: "2018-12-13-stumbling-through-aoc-1"
 description: "Follow along as I stumble my way through the first task in Advent of Code, landing in generator heaven."
+image: "/images/aoc.jpg"
 ---
 
 I decided to check out [Advent of Code (AoC](https://adventofcode.com/) this year, and when solving the first task I made a little library for lazy evaluation of sequences using [generators](/2018-12-13/aoc-generators/). Generators are something I rarely use at work, but would like to have in my toolbelt.

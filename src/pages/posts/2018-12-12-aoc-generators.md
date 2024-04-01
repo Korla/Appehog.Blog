@@ -5,6 +5,7 @@ date: 2018-12-13
 tags: javascript generators
 slug: "2018-12-12-aoc-generators"
 description: "A short explanation of key concepts of generators in javascript"
+image: "/images/generator.jpg"
 ---
 
 ## Why should I care about generators?
