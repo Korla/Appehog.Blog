@@ -5,7 +5,7 @@ export const demos = [
     source: "https://github.com/Korla/hexgame/",
     url: "/demos/hexgame/",
     description:
-      "I helped out a little with an open source redux-based game engine called boardgame.io. This is my version of a game called The Hive implemented using that framework.",
+      "I contributed to an open source redux-based game engine called boardgame.io. This is my version of a game called The Hive implemented using that framework.",
   },
   {
     name: "Raycing",

@@ -18,4 +18,3 @@ I am sure you're wondering why the company is named Appehög. It is of course du
 For the past 25 years or so, it's been the place where our family gathers in the summer and during the holidays. The house was built next to a hill, *hög*, and was rumoured to have once been the home of a giant called *Appe*.
 
 Hence, *Appehög*.
-

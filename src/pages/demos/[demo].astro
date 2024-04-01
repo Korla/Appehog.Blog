@@ -1,5 +1,6 @@
 ---
 import BlogLayout from "../../layouts/BlogLayout.astro";
+import Card from "../../components/card.astro";
 import { demos } from "../../demos";
 
 export const getStaticPaths = () =>
@@ -10,7 +11,11 @@ const currentDemo = demos.find(({ name }) => name.toLowerCase() == demo);
 ---
 
 <BlogLayout>
-  <a href={`${currentDemo.link}`}>{currentDemo.name}</a>
-  <p>{currentDemo.description}</p>
-  <iframe src={currentDemo.link}></iframe>
+  <h1 class="text-xl mt-8">
+    <a href={`${currentDemo.link}`}>{currentDemo.name}</a>
+  </h1>
+  <p class="mt-2 mb-4">{currentDemo.description}</p>
+  <Card>
+    <iframe class="w-full" style={"height: 50vh;"} src={currentDemo.link}></iframe>
+  </Card>
 </BlogLayout>

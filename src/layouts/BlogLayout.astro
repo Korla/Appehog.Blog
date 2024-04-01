@@ -15,18 +15,20 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
     <meta charset="utf-8" />
   </head>
 
-  <body>
+  <body class="pb-20">
     <div>
       <div class="flex justify-center items-center text-lg px-8 py-4">
         <h1 class="text-3xl flex-1 font-bold">
           <a href="/">Appehög AB</a>
         </h1>
         {
-          links.map(({ url, name }) => (
-            <a class="mx-1" href={url}>
-              {name}
-            </a>
-          ))
+          links
+            .filter(({ url }) => url)
+            .map(({ url, name }) => (
+              <a class="mx-1" href={url}>
+                {name}
+              </a>
+            ))
         }
         <span class="flex-1"></span>
       </div>
@@ -37,7 +39,9 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
     <div class="px-4">
       <slot />
     </div>
-    <div class="fixed bottom-0 left-0 z-20 w-full flex justify-center items-center text-xs px-8 py-4 bg-orange-100 border-t-2 border-cyan-950">
+    <div
+      class="fixed bottom-0 left-0 z-20 w-full flex justify-center items-center text-xs px-8 py-4 bg-orange-100 border-t-2 border-cyan-950"
+    >
       © Copyright 2024, Johannes Bengtsson
     </div>
   </body>
