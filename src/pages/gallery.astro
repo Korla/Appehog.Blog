@@ -1,18 +1,19 @@
 ---
 import BlogLayout from "../layouts/BlogLayout.astro";
+import Card from "../components/card.astro";
 
 const images = [
   {
     name: "generator",
     description:
       "This isn't actually a generator, but it's the closest that the headquarters can supply at the moment, some value was generated when the lumber was stored",
-    link: "/posts/2018-12-13-aoc-generators/",
+    link: "/posts/2018-12-12-aoc-generators/",
   },
   {
     name: "generator2",
     description:
       "There are no predators at the headquarters, just imagine that the neighbor's hens and rooster are lying in wait for prey, just like the generator is waiting for someone to call next",
-    link: "/posts/2018-12-13-aoc-generators/",
+    link: "/posts/2018-12-12-aoc-generators/",
   },
   {
     name: "about2",
@@ -24,18 +25,31 @@ const images = [
     name: "aoc",
     description:
       "So, how lazy was I? I took this photo from the warmth of the kitchen",
-    link: "/posts/2018-12-29-stumbling-through-aoc-1",
+    link: "/posts/2018-12-13-stumbling-through-aoc-1",
   },
 ];
 ---
 
 <BlogLayout>
-  <ul>
+  <ul class="mx-4">
     {
       images.map((image) => (
-        <li key={image.name}>
-          <image src={`/images/${image.name}.jpg`} alt={image.name} />
-          <em>{image.description}</em>
+        <li class="mt-8">
+          <Card>
+            <div class="bg-orange-100">
+              <a href={image.link}>
+                <image
+                  class="w-full border-b-2 border-cyan-950"
+                  style={"object-fit: cover;"}
+                  src={`/images/${image.name}.jpg`}
+                  alt={image.name}
+                />
+                <div class="p-3">
+                  <div class="min-h-12">{image.description}</div>
+                </div>
+              </a>
+            </div>
+          </Card>
         </li>
       ))
     }
