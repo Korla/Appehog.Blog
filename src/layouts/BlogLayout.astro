@@ -8,6 +8,7 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
   name: file.match(regex)[1],
 }));
 ---
+<meta slot="head" charset="utf-8" />
 
 <div class="container">
   <h1>Appehög AB</h1>
