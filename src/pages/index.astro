@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import BlogLayout from "../layouts/BlogLayout.astro";
 import Card from "../components/card.astro";
+import about2Image from "../assets/about2.jpg";
 ---
 
 <BlogLayout>
@@ -25,7 +27,7 @@ import Card from "../components/card.astro";
     </p>
 
     <Card>
-      <image src="/images/about2.jpg" alt="The headquarters of Appehög AB" />
+      <Image src={about2Image} alt="The headquarters of Appehög AB" />
     </Card>
     <em>
       Late summer 2018. From left to right, garage, "hönsahuset" and

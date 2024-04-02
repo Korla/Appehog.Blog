@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import BlogLayout from "../layouts/BlogLayout.astro";
 import Card from "../components/card.astro";
 
-const images = [
+const images = import.meta.glob("/src/assets/*.{jpeg,jpg,png,gif}");
+
+const imageData = [
   {
     name: "generator",
     description:
@@ -33,15 +36,15 @@ const images = [
 <BlogLayout>
   <ul class="mx-4">
     {
-      images.map((image) => (
+      imageData.map((image) => (
         <li class="mt-8">
           <Card>
             <div class="bg-orange-100">
               <a href={image.link}>
-                <image
+                <Image
                   class="w-full border-b-2 border-cyan-950"
                   style={"object-fit: cover;"}
-                  src={`/images/${image.name}.jpg`}
+                  src={images[`/src/assets/${image.name}.jpg`]()}
                   alt={image.name}
                 />
                 <div class="p-3">

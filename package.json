@@ -14,6 +14,7 @@
     "prettier-plugin-astro": "^0.13.0"
   },
   "dependencies": {
+    "@astrojs/mdx": "^2.2.3",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.12",
     "tailwind": "^4.0.0",
