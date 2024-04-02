@@ -23,7 +23,7 @@ const posts = (await Astro.glob("../pages/posts/*.mdx"));
                   alt={post.frontmatter.title}
                 />
                 <div class="p-3 bg-orange-100">
-                  <h2 class="text-xl mb-1 underline">
+                  <h2 class="mb-1">
                     {post.frontmatter.title}
                   </h2>
                   <div class="min-h-12">{post.frontmatter.description}</div>

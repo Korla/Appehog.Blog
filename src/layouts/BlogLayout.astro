@@ -14,6 +14,11 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
   <head>
     <meta charset="utf-8" />
     <style is:global>
+      h2 {
+        font-size: theme(fontSize.xl);
+        line-height: theme(lineHeight.relaxed);
+        text-decoration: underline;
+      }
       h2,
       p {
         margin-top: theme(spacing.4);
