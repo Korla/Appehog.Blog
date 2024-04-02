@@ -1,0 +1,19 @@
+html h2 {
+    font-size: theme(fontSize.xl);
+    line-height: theme(lineHeight.relaxed);
+    text-decoration: underline;
+}
+html h2,
+html p {
+    margin-top: theme(spacing.4);
+    margin-bottom: theme(spacing.4);
+}
+
+html em {
+    font-size: theme(fontSize.sm);
+    line-height: theme(lineHeight.tight);
+}
+
+html pre {
+    padding: theme(padding.2);
+}
