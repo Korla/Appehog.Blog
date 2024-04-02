@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import Card from "./card.astro";
+
+const { src, alt, subtitle } = Astro.props;
+---
+
+<div class="flex justify-center">
+  <Card classes="lg:max-w-3xl">
+    <Image src={src} alt={alt} />
+    <div class="p-3 text-orange-100">
+      <em>{subtitle}</em>
+    </div>
+  </Card>
+</div>

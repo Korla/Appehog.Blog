@@ -1,0 +1,38 @@
+---
+import { demos } from "../demos.js";
+import Card from "../components/card.astro";
+import BlogLayout from "./BlogLayout.astro";
+
+const { demo } = Astro.params;
+const currentDemo = demos.find(({ name }) => name.toLowerCase() === demo);
+const demosToRender = demos.map((demo) => ({
+  ...demo,
+  classes:
+    demo === currentDemo ? "bg-cyan-950 text-orange-100" : "bg-orange-100",
+}));
+---
+
+<BlogLayout>
+  <ul class="flex -my-4">
+    {
+      demosToRender.map((demo) => (
+        <li class="w-1/4 m-4">
+          <Card>
+            <div class={demo.classes}>
+              <a href={demo.url}>
+                <div class="p-3">
+                  <h2 class="mb-1 mt-0">{demo.name}</h2>
+                  <div class="max-h-12 overflow-hidden truncate">
+                    {demo.description}
+                  </div>
+                </div>
+              </a>
+            </div>
+          </Card>
+        </li>
+      ))
+    }
+  </ul>
+
+  <slot />
+</BlogLayout>

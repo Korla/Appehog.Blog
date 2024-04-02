@@ -1,0 +1,7 @@
+---
+const { xOnly, classes } = Astro.props;
+const padding = xOnly ? 'py-2' : 'p-1';
+---
+<div class=`bg-cyan-950 ${padding} ${classes || ''}`>
+    <slot />
+</div>

@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import BlogLayout from "../layouts/BlogLayout.astro";
+import Card from "../components/card.astro";
+const images = import.meta.glob("/src/assets/*.{jpeg,jpg,png,gif}");
+const posts = (await Astro.glob("../pages/posts/*.mdx"));
+---
+
+<BlogLayout>
+  <ul class="flex flex-wrap lg:flex-nowrap -mt-4">
+    {
+      posts.map((post) => (
+        <li class="w-screen lg:w-1/2 m-4">
+          <Card>
+            <div>
+              <a href={`/posts/${post.frontmatter.slug}`}>
+                <Image
+                  class="w-full h-40"
+                  style={
+                    "object-fit: cover; mask-image: linear-gradient(#000, transparent);"
+                  }
+                  src={images[post.frontmatter.image]()}
+                  alt={post.frontmatter.title}
+                />
+                <div class="p-3 bg-orange-100">
+                  <h2 class="mb-1">
+                    {post.frontmatter.title}
+                  </h2>
+                  <div class="min-h-12">{post.frontmatter.description}</div>
+                </div>
+              </a>
+            </div>
+          </Card>
+        </li>
+      ))
+    }
+  </ul>
+</BlogLayout>
