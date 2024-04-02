@@ -7,10 +7,10 @@ const posts = (await Astro.glob("../pages/posts/*.mdx"));
 ---
 
 <BlogLayout>
-  <ul class="flex -mt-4">
+  <ul class="flex flex-wrap lg:flex-nowrap -mt-4">
     {
       posts.map((post) => (
-        <li class="w-1/2 m-4">
+        <li class="w-screen lg:w-1/2 m-4">
           <Card>
             <div>
               <a href={`/posts/${post.frontmatter.slug}`}>
