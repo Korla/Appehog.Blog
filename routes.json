@@ -1,7 +1,0 @@
-{
-    "routes": [
-        { "handle": "filesystem" },
-        { "src": "/blog", "dest": "/blog/index.html" },
-        { "src": "/blog/:slug", "dest": "/post.astro" }
-    ]
-}
