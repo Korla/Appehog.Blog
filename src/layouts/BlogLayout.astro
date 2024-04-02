@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import headerImage from "../assets/header.jpg";
 import Card from "../components/card.astro";
+import "./blog.css";
 
 const regex = /\/([^/]+)\.astro$/;
 const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
@@ -13,27 +14,6 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
 <html class="bg-orange-100 text-cyan-700">
   <head>
     <meta charset="utf-8" />
-    <style is:global>
-      h2 {
-        font-size: theme(fontSize.xl);
-        line-height: theme(lineHeight.relaxed);
-        text-decoration: underline;
-      }
-      h2,
-      p {
-        margin-top: theme(spacing.4);
-        margin-bottom: theme(spacing.4);
-      }
-
-      em {
-        font-size: theme(fontSize.sm);
-        line-height: theme(lineHeight.tight);
-      }
-
-      pre {
-        padding: theme(padding.2);
-      }
-    </style>
   </head>
 
   <body class="pb-20">
