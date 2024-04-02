@@ -33,7 +33,11 @@ const links = (await Astro.glob("../pages/*.astro")).map(({ file, url }) => ({
         <span class="flex-1"></span>
       </div>
       <Card xOnly>
-        <image src="/images/header.jpg" alt="Header" />
+        <image
+          src="/images/header.jpg"
+          alt="Header"
+          style={"mask-image: linear-gradient(#000, transparent);"}
+        />
       </Card>
     </div>
     <div class="px-4">
