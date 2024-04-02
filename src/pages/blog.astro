@@ -5,7 +5,7 @@ const posts = await Astro.glob("../pages/posts/*.md");
 ---
 
 <BlogLayout>
-  <ul class="flex my-4">
+  <ul class="flex -mt-4">
     {
       posts.map((post) => (
         <li class="w-1/2 m-4">
