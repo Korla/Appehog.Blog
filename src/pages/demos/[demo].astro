@@ -12,13 +12,15 @@ const currentDemo = demos.find(({ name }) => name.toLowerCase() === demo);
 
 <DemoLayout>
   <div class="m-4">
-    <h1 class="text-xl mt-4">
-      <a href={`${currentDemo.link}`}>{currentDemo.name}</a>
-    </h1>
-    <p class="mt-2 mb-4">{currentDemo.description}</p>
     <Card>
-      <iframe class="w-full" style={"height: 50vh;"} src={currentDemo.link}
+      <iframe class="w-full" style={"height: 50vh; "} src={currentDemo.link}
       ></iframe>
+      <div class="p-3 text-orange-100">
+        <h1 class="text-xl mt-4">
+          <a href={`${currentDemo.link}`}>{currentDemo.name}</a>
+        </h1>
+        <p class="mt-2 mb-4">{currentDemo.description}</p>
+      </div>
     </Card>
   </div>
 </DemoLayout>
